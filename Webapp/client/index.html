@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check if your fruit is Fresh or Rotten?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form {
+        max-width: 400px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .upload-box {
+        border: 2px dashed #ccc;
+        border-radius: 4px;
+        padding: 40px 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .upload-box:hover {
+        border-color: #666;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    button[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+    }
+    #currimage{
+        display: none;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+    <h1>Check if your fruit is Fresh or Rotten</h1>
+
+        <div class="form">
+        <label for="imageUpload">Select or Drag & Drop Your Image</label>
+        <div class="upload-box" onclick="document.getElementById('imageUpload').click()">
+            <span>Click here to upload</span>
+            <img src="#" id="currimage" width="360px" alt="image not available">
+            <input name="file" id="imageUpload" accept=".jpg, .jpeg, .png" type="file" onchange="imageChanged()">
+        </div>
+        <button onclick="classifyImage()" type="submit">Check!</button>
+        </div>
+    <script src="/client/index.js"></script>
+</body>
+</html>
